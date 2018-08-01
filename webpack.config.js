@@ -39,6 +39,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      _: 'underscore'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',

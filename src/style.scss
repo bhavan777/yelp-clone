@@ -5,8 +5,15 @@ body {
 }
 * {
   margin: 0;
+  outline: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #888;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 header {
@@ -15,7 +22,9 @@ header {
   justify-content: center;
   min-height: 60px;
   // background-color: #fafafa;
-  box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
 
   form {
     align-self: center;
@@ -26,8 +35,9 @@ header {
     padding: 10px;
     align-self: center;
     box-sizing: border-box;
-    width: 250px;
-    border: thin solid rgba(0,0,0,0.1);
+    font-size: 13px;
+    width: 300px;
+    border: thin solid rgba(0,0,0,0.05);
     border-radius: 3px 0 0 3px;
   }
   button {
@@ -42,6 +52,55 @@ header {
 }
 
 #map {
+  min-width: 70vw;
+}
+.wrap {
+  display: flex;
   height: calc(100vh - 60px);
-  width: 70vw;
+}
+#results {
+  flex-grow: 1;
+  min-width: 20vw;
+  overflow: scroll;
+
+  .place {
+    background-color: #fff;
+    border-bottom: thin solid rgba(0,0,0,0.05);
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    &:first-child {
+      border-top: thin solid rgba(0,0,0,0.05);
+    }
+    .dp {
+      min-width: 50px;
+      height: 50px;
+      background-color: antiquewhite;
+      border-radius: 3px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .details {
+      text-align: left;
+      color: #444;
+      padding-left: 15px;
+      h5 {
+        font-weight: 400;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: inherit;
+      }
+      p {
+        font-weight: 300;
+        font-size: 12px;
+        color: inherit;
+        overflow: hidden;
+        max-height: 30px;
+      }
+
+    }
+
+  }
 }
